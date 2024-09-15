@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todo.css" class="style">
+</head>
+<body>
+     <div class="container">
+            <div class="todo-app">
+                <h1>To-Do List</h1><br>
+                <div class="row">
+                    <input type="text" id="inputbox" placeholder="Add you task" autofocus>
+                    <button onclick="addtask()" class="addbtn">Add</button>
+                </div>
+                <ul id="list-container">
+                    <li id="list-element">
+                        <input type="checkbox" >Task1
+                        <button class="delbtn" onclick="del(event)">x</button>
+                    </li>
+                    <!-- <li><input type="checkbox">Task2</li>
+                    <li><input type="checkbox">Task3</li> -->
+                </ul>
+            </div>
+     </div>
+</body>
+<script>
+        var inputbox=document.getElementById("inputbox");
+        var ul=document.getElementById("list-container");
+        function addtask()
+        {
+        if(inputbox.value === '')
+        {
+            alert("You must write something...");
+        }
+        else
+        {
+            var listItem =document.createElement("li");
+            listItem.innerHTML="<input type='checkbox'> "+ inputbox.value+
+            "<button class='delbtn' onclick='del(event)'>x</button>";
+            ul.append(listItem);
+        }
+        inputbox.value='';
+        }
+        function del(event)
+        {
+            event.target.parentElement.remove();
+        }
+</script>
+</html>
