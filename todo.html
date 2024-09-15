@@ -27,7 +27,7 @@
 </body>
 <script>
         var inputbox=document.getElementById("inputbox");
-        var ul=document.getElementById("list-container");
+        var listcontainer=document.getElementById("list-container");
         function addtask()
         {
         if(inputbox.value === '')
@@ -39,7 +39,7 @@
             var listItem =document.createElement("li");
             listItem.innerHTML="<input type='checkbox'> "+ inputbox.value+
             "<button class='delbtn' onclick='del(event)'>x</button>";
-            ul.append(listItem);
+            listcontainer.append(listItem);
         }
         inputbox.value='';
         }
